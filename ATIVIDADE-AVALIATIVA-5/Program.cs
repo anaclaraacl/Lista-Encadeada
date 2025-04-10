@@ -1,4 +1,4 @@
-﻿class Program
+class Program
 {
     private static void Main(string[] args)
     {
@@ -11,6 +11,7 @@
             Console.WriteLine("2 - Pesquisar");
             Console.WriteLine("3 - Imprimir Lista");
             Console.WriteLine("4 - Sair");
+            Console.WriteLine();
             Console.Write("Escolha uma opção: ");
 
             if (!int.TryParse(Console.ReadLine(), out opcao))
@@ -22,10 +23,12 @@
             switch(opcao)
             {
                 case 1:
-                    Console.WriteLine("Digite uma chave: ");
+                   
+                    Console.Write("Digite uma chave: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Digite um nome: ");
+                    Console.Write("Digite um nome: ");
                     string nome = Console.ReadLine();
+                    Console.WriteLine();
 
                     if (lista.procurar(id) >= 0)
                     {
@@ -37,12 +40,13 @@
                     }
                     break;
                 case 2:
-                    Console.WriteLine("Qual a chave que você deseja pesquisar: ");
+                    Console.Write("Qual a chave que você deseja pesquisar: ");
                     id = Convert.ToInt32(Console.ReadLine());
                     if (lista.procurar(id) >= 0)
                     {
-                        Console.WriteLine(lista.procurarNome(id));
-                        Console.WriteLine("Deseja remover o nó da lista (S/N)?");
+                        Console.WriteLine("Nome: " + lista.procurarNome(id));
+                        
+                        Console.Write("Deseja remover o nó da lista (S/N)?");
                         string resposta = Console.ReadLine();
 
                         if(resposta == "S")
