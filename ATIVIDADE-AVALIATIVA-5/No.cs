@@ -7,9 +7,10 @@ public class No
     private string nome;
     private No? proximo;
 
-    public No(int id)
+    public No(int id, string nome)
     {
         this.id = id;
+        this.nome = nome;
         this.proximo = null;
     }
 
