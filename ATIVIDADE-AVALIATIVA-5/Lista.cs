@@ -20,7 +20,7 @@ public class Lista
 
     public void inserir(int id, string nome)
     {
-        No novo = new No(id);
+        No novo = new No(id, nome);
         if (this.vazia())
         {
             this.primeiro = novo;
@@ -96,7 +96,6 @@ public class Lista
         }
         return "";
     }
-
 
     public int procurar(int id) {
         No? aux = this.primeiro;
